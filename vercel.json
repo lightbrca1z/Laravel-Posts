@@ -12,6 +12,8 @@
             "dest": "/public/index.php"
         }
     ],
+    "buildCommand": "composer install --no-dev --optimize-autoloader",
+    "installCommand": "composer install --no-dev --optimize-autoloader",
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
