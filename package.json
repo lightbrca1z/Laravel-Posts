@@ -3,8 +3,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "build": "echo 'Laravel app - no build step required'"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
