@@ -11,5 +11,15 @@
             "src": "/(.*)",
             "dest": "/public/index.php"
         }
-    ]
+    ],
+    "buildCommand": "composer install --no-dev --optimize-autoloader && composer run vercel-build",
+    "env": {
+        "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie",
+        "DB_CONNECTION": "sqlite",
+        "DB_DATABASE": "/tmp/database.sqlite"
+    }
 } 
