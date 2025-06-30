@@ -14,6 +14,6 @@ package-lock.json
 tests
 .editorconfig
 phpunit.xml
-vercel-build.sh
 build.sh
-vercel.env 
+vercel.env
+vercel-build.json 
