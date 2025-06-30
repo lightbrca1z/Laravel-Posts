@@ -16,4 +16,5 @@ tests
 phpunit.xml
 build.sh
 vercel.env
-vercel-build.json 
+vercel-build.json
+vercel-env.json 
