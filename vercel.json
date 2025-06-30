@@ -13,11 +13,6 @@
             "dest": "/public/index.php"
         }
     ],
-    "functions": {
-        "public/index.php": {
-            "runtime": "vercel-php@1.0.0"
-        }
-    },
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
