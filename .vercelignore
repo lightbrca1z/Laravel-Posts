@@ -1,6 +1,8 @@
 /node_modules
-/vendor
-/storage
+/storage/logs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
 /bootstrap/cache
 .env
 .env.example
@@ -8,4 +10,7 @@
 .gitignore
 README.md
 composer.lock
-package-lock.json 
+package-lock.json
+tests
+.editorconfig
+phpunit.xml 

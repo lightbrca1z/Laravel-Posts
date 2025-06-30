@@ -4,7 +4,7 @@
     "builds": [
         {
             "src": "public/index.php",
-            "use": "@vercel/php"
+            "use": "@vercel/php@1.0.0"
         }
     ],
     "routes": [
@@ -13,6 +13,11 @@
             "dest": "/public/index.php"
         }
     ],
+    "functions": {
+        "public/index.php": {
+            "runtime": "vercel-php@1.0.0"
+        }
+    },
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
@@ -27,6 +32,8 @@
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
         "SSR_TEMP_PATH": "/tmp/ssr",
-        "NODE_PATH": "node"
+        "NODE_PATH": "node",
+        "DB_CONNECTION": "sqlite",
+        "DB_DATABASE": "/tmp/database.sqlite"
     }
 } 
