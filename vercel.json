@@ -12,7 +12,6 @@
             "dest": "/public/index.php"
         }
     ],
-    "buildCommand": "composer install --no-dev --optimize-autoloader && composer run vercel-build",
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
