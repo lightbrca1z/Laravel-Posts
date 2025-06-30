@@ -13,5 +13,4 @@ composer.lock
 package-lock.json
 tests
 .editorconfig
-phpunit.xml
-.git/ 
+phpunit.xml 
