@@ -124,6 +124,19 @@ p {
     background-color: #f8f9fa;
     border-left: 4px solid #007bff;
     border-radius: 0 5px 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.comments-section li .comment-text {
+    flex: 1;
+}
+
+.comments-section li form {
+    margin: 0;
+    flex-shrink: 0;
 }
 
 .back-link {
@@ -232,4 +245,27 @@ input[type="text"], textarea{
 
 .posts-list a:hover {
     color: #007bff;
+}
+
+li form{
+    display: inline-block;
+}
+
+.comments-section li form {
+    margin: 0;
+}
+
+.comments-section li form button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.comments-section li form button:hover {
+    background-color: #c82333;
 }

@@ -21,7 +21,14 @@
 
         <ul>
             @forelse ($post->comments as $comment)
-                <li>{{ $comment->body }}</li>
+                <li>
+                    <span class="comment-text">{{ $comment->body }}</span>
+                    <form method="post" class="comment-delete-form" action="{{ route('posts.comments.destroy', ['post' => $post->id, 'comment' => $comment->id]) }}">
+                        @method('DELETE')
+                        @csrf
+                        <button>Delete</button>
+                    </form>
+                </li>
             @empty
                 <li>No comments.</li>
             @endforelse
@@ -29,10 +36,13 @@
     </div>
 
     <h2>Add a Comment</h2>
-    <form>
+    <form method="post" action="{{ route('posts.comments.store', $post) }}">
         @csrf
         <div>
             <input type="text" name="body">
+            @error('body')
+                <p class="error">{{ $message }}</p>
+            @enderror
        </div>
        <div>
         <button>Add</button>
@@ -45,9 +55,10 @@
         'use strict';
 
         {
-            const from = document.getElementById('#delete-form');
+            // Post delete form
+            const form = document.getElementById('delete-form');
 
-            from.addEventListener('submit', (e) => {
+            form.addEventListener('submit', (e) => {
                 e.preventDefault();
 
                 if (confirm('本当に削除しますか？') === false) {
@@ -55,6 +66,20 @@
                 }
 
                 form.submit();
+            });
+
+            // Comment delete forms
+            const commentForms = document.querySelectorAll('.comment-delete-form');
+            commentForms.forEach((commentForm) => {
+                commentForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    if (confirm('本当に削除しますか？') === false) {
+                        return;
+                    }
+
+                    commentForm.submit();
+                });
             });
         }
 

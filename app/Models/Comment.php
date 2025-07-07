@@ -6,13 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    //
-    protected $fillable = ['body', 'post_id'];
+    protected $fillable = ['content', 'post_id', 'user_id'];
 
-        // $comment->post
+    /**
+     * Get the post that owns the comment.
+     */
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
 
-        public function comment()
-        {
-            return $this->belongsTo(Comment::class);
-        }
+    /**
+     * Get the user that owns the comment.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
